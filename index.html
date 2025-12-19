@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahdi Dehghani | AI Researcher</title>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --section-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            background: var(--section-bg);
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            margin: 10px 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Generic Lists */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul.custom-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul.custom-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        /* Resume Items */
+        .resume-item {
+            margin-bottom: 35px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .resume-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--bg-color);
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .resume-item .date {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: #f0f2f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .resume-item p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* Skills Tags */
+        .skill-tag {
+            display: inline-block;
+            background: #e8f4fd;
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 0 8px 8px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--primary-color);
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            nav .container { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            section { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Mahdi Dehghani</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+        <div class="container">
+            
+            <h1>AI Researcher | PhD Candidate | Deep Learning Specialist</h1>
+            <div style="margin-top: 20px;">
+                <a href="#contact" class="btn">Get in Touch</a>
+                <a href="#resume" class="btn btn-outline">View Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2><i class="fas fa-user-circle" style="margin-right: 10px;"></i>About Me</h2>
+        <p>
+            I am an <strong>AI researcher</strong> with strong expertise in <strong>Deep Learning, Natural Language Processing (NLP), and Machine Learning</strong>. 
+            My work is currently focused on <strong>probabilistic modeling and Generative AI</strong>, driven by a passion for developing data-efficient learning systems for scientific applications.
+        </p>
+        <p>
+            With strong programming skills and mathematical maturity, I have built a proven track record of impactful research, including an accepted paper at <strong>ACL 2025 Findings</strong>. 
+            I am currently a PhD Candidate looking to contribute to cutting-edge research.
+        </p>
+        
+        <div style="margin-top: 30px;">
+            <h3>Research Interests</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                <span class="skill-tag">Natural Language Processing</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Machine Learning & Deep Learning</span>
+                <span class="skill-tag">Interdisciplinary AI Research</span>
+                <span class="skill-tag">Generative AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2><i class="fas fa-code-branch" style="margin-right: 10px;"></i>Selected Projects</h2>
+        
+        <div class="resume-item">
+            <h3>Diversifying Personalized Query Auto-Completion System</h3>
+            <span class="date">Transformer-based Model | PyTorch</span>
+            <p><strong>Goal:</strong> Enhance search efficiency and user experience by generating personalized and diverse query suggestions.</p>
+            <ul class="custom-list">
+                <li>Designed a transformer-based model using PyTorch and attention mechanisms.</li>
+                <li>Tailored suggestions to users by integrating user-specific embeddings.</li>
+                <li>Implemented sampling-based generation for diverse and meaningful suggestions.</li>
+                <li>Achieved measurable improvements in BLEU and ROUGE metrics over baselines.</li>
+            </ul>
+        </div>
+
+        <div class="resume-item">
+            <h3>Android-based Face Recognition App</h3>
+            <span class="date">Java, OpenCV, SQLite</span>
+            <p><strong>Goal:</strong> Develop a secure and efficient face recognition system for mobile.</p>
+            <ul class="custom-list">
+                <li>Achieved over 90% authentication accuracy using OpenCV's LBPH algorithm.</li>
+                <li>Leveraged real-time face detection with CameraX.</li>
+                <li>Ensured data privacy by securely storing user metadata locally in SQLite.</li>
+            </ul>
+        </div>
+
+        <div class="resume-item">
+            <h3>NLP-based Disease Detection (ClinicalBERT)</h3>
+            <span class="date">Clinical Notes Analysis | MIMIC-III Dataset</span>
+            <p><strong>Goal:</strong> Predict ICD-9 codes from clinical notes to streamline medical coding.</p>
+            <ul class="custom-list">
+                <li>Fine-tuned ClinicalBERT on 40,000+ patient records for multi-label classification.</li>
+                <li>Attained an F1-score of 0.65, outperforming traditional methods by 20-30%.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="container">
+        <h2><i class="fas fa-book" style="margin-right: 10px;"></i>Publications</h2>
+        <ul class="custom-list">
+            <li>
+                <strong>Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation</strong><br>
+                <em>ACL Findings 2025</em> | <a href="#" style="color:var(--accent-color);">arXiv</a> | <a href="#" style="color:var(--accent-color);">GitHub</a>
+            </li>
+            <li>
+                <strong>DIPT: Diversified Personalized Transformer for QAC systems</strong><br>
+                <em>IEEE</em>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="container">
+        <h2><i class="fas fa-graduation-cap" style="margin-right: 10px;"></i>Resume</h2>
+        
+        <h3>Education</h3>
+        <div class="resume-item">
+            <h4>Master of Software Engineering</h4>
+            <span class="date">Khaje Nasiroddine Toosi University, Tehran | Sep 2019 - Sep 2022</span>
+            <p><strong>Thesis:</strong> Diversifying Personalized Query Auto Completion system using Query Topics</p>
+            <p>Graduated as the 2nd ranked student in the program.</p>
+        </div>
+
+        <div class="resume-item">
+            <h4>Bachelor of Computer Engineering</h4>
+            <span class="date">Bu-Ali Sina University, Hamedan | Sep 2014 - Sep 2018</span>
+            <p><strong>Thesis:</strong> Face Recognition Android application using biometric features</p>
+            <p>Top performer in core mathematics courses.</p>
+        </div>
+
+        <h3>Experience</h3>
+        <div class="resume-item">
+            <h4>Teaching Assistant - Advanced Data Mining</h4>
+            <span class="date">KNTU | Graduate Level</span>
+            <p>Assisted graduate students with projects and theory.</p>
+        </div>
+
+        <div class="resume-item">
+            <h4>Private Python & ML Tutor</h4>
+            <span class="date">Jan 2022 - Present</span>
+            <p>Taught data structures, ML, algorithms, and real-world programming.</p>
+        </div>
+
+        <div class="resume-item">
+            <h4>IT Specialist</h4>
+            <span class="date">Management and Planning Organization</span>
+            <p>Maintained ISMS and SOC operations. Demonstrated technical reliability in a professional setting.</p>
+        </div>
+
+        <h3>Technical Skills</h3>
+        <div style="margin-bottom: 30px;">
+            <p><strong>Languages:</strong> <span class="skill-tag">Python</span> <span class="skill-tag">Java</span> <span class="skill-tag">C++</span> <span class="skill-tag">JavaScript</span></p>
+            <p><strong>ML/DL:</strong> <span class="skill-tag">TensorFlow</span> <span class="skill-tag">PyTorch</span> <span class="skill-tag">Keras</span> <span class="skill-tag">Hugging Face</span> <span class="skill-tag">Scikit-learn</span></p>
+            <p><strong>NLP:</strong> <span class="skill-tag">Transformers</span> <span class="skill-tag">RAG</span> <span class="skill-tag">NLTK</span> <span class="skill-tag">SpaCy</span></p>
+            <p><strong>Tools:</strong> <span class="skill-tag">Git</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Docker</span> <span class="skill-tag">SQL</span></p>
+        </div>
+        
+        <h3>Certificates</h3>
+        <ul class="custom-list">
+            <li>Coursera: Natural Language Processing in TensorFlow</li>
+            <li>Coursera: Convolutional Neural Networks in TensorFlow</li>
+            <li>Udemy: Python for Data Science & Machine Learning from A-Z</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact Me</h2>
+        <div style="text-align: center;">
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">I am always open to discussing research opportunities and collaborations.</p>
+            
+            <a href="mailto:mail.MahdiDehghani@gmail.com" class="btn" style="margin: 10px;"><i class="fas fa-envelope"></i> Email Me</a>
+            
+            <div class="social-links" style="margin-top: 40px;">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <p style="margin-top: 20px; color: #777;">
+                <strong>Email:</strong> mail.MahdiDehghani@gmail.com<br>
+                <strong>Phone:</strong> (+98) 936 143 3121
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mahdi Dehghani. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
