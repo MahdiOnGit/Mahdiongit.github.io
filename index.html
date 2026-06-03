@@ -2,448 +2,692 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Dehghani | AI Researcher</title>
-    <!-- FontAwesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Mahdi Dehghani - AI Researcher specializing in Deep Learning, NLP, Multimodal Generative AI, and Probabilistic Modeling. Explore portfolio of RAG systems, personalization transformers, and more.">
+    <title>Mahdi Dehghani | AI Researcher & NLP Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --section-bg: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a0f1e, #03060c);
+            color: #eef2ff;
+            line-height: 1.5;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
+        /* animated gradient orb */
+        .gradient-bg {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Header / Hero Section */
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 120px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        header p {
-            font-size: 1.4rem;
-            font-weight: 300;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Sections */
-        section {
-            background: var(--section-bg);
-            margin: 40px 0;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        h4 {
-            margin: 10px 0 5px 0;
-            font-size: 1.1rem;
-        }
-
-        /* Generic Lists */
-        ul.custom-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        ul.custom-list li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        ul.custom-list li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
             left: 0;
-            font-size: 1.2rem;
-            line-height: 1.5rem;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(ellipse at 40% 40%, rgba(45, 70, 120, 0.2), rgba(5, 10, 25, 0.9));
         }
 
-        /* Resume Items */
-        .resume-item {
-            margin-bottom: 35px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .resume-item::before {
+        .gradient-bg::before {
             content: '';
             position: absolute;
-            left: -10px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--bg-color);
-            border: 4px solid var(--accent-color);
-            border-radius: 50%;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(66, 153, 225, 0.15) 0%, rgba(0,0,0,0) 70%);
+            animation: rotateGlow 30s infinite linear;
         }
 
-        .resume-item .date {
-            font-style: italic;
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
+        @keyframes rotateGlow {
+            0% { transform: translate(0,0) rotate(0deg); }
+            100% { transform: translate(0,0) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* glass morph cards */
+        .glass-card {
+            background: rgba(15, 25, 45, 0.55);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(80, 140, 210, 0.25);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+            transition: transform 0.25s ease, border-color 0.2s;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(100, 180, 250, 0.6);
+            transform: translateY(-3px);
+        }
+
+        /* sections */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #FFFFFF, #9bbdf0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             display: inline-block;
-            background: #f0f2f5;
-            padding: 2px 8px;
-            border-radius: 4px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
         }
 
-        .resume-item p {
-            margin-bottom: 5px;
-            color: #555;
+        /* hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem 2rem 2.5rem;
+            margin-bottom: 2rem;
         }
-
-        /* Skills Tags */
-        .skill-tag {
-            display: inline-block;
-            background: #e8f4fd;
-            color: var(--accent-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin: 0 8px 8px 0;
-            font-size: 0.9rem;
+        .hero-name {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff, #b9d0ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero-tagline {
+            font-size: 1.3rem;
             font-weight: 500;
-            border: 1px solid rgba(52, 152, 219, 0.2);
+            color: #cbd5e6;
+        }
+        .hero-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        .badge {
+            background: rgba(59,130,246,0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(59,130,246,0.4);
+        }
+        .lang-badge {
+            background: rgba(100,100,150,0.25);
+            border-color: #4b6a9b;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 12px 28px;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s;
-            font-weight: 600;
-            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        /* stat grid */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.2rem;
+            margin: 2rem 0;
         }
-
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            margin-left: 10px;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        footer {
+        .stat-item {
+            background: rgba(10, 20, 40, 0.65);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
             text-align: center;
-            padding: 40px 20px;
-            background: var(--primary-color);
-            color: white;
-            margin-top: 60px;
+            flex: 1;
+            min-width: 120px;
+            border: 1px solid rgba(80,140,210,0.3);
         }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: color 0.3s;
+        .stat-number {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #60a5fa;
+            line-height: 1;
         }
-        
-        .social-links a:hover {
-            color: var(--accent-color);
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            nav .container { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            section { padding: 30px 20px; }
+        /* skills grid + bars */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-card {
+            background: rgba(20, 30, 50, 0.6);
+            border-radius: 1.5rem;
+            padding: 1rem 1.2rem;
+            backdrop-filter: blur(5px);
+        }
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .progress-bar-bg {
+            background: #1e2a3a;
+            border-radius: 12px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+            border-radius: 12px;
+            transition: width 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* projects grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .project-card {
+            background: rgba(12, 22, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(80,140,210,0.2);
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .project-tech {
+            font-size: 0.75rem;
+            color: #a0c4ff;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .project-desc {
+            font-size: 0.9rem;
+            color: #cfdef5;
+            margin-bottom: 1.2rem;
+        }
+        .completion-track {
+            margin-top: 1rem;
+        }
+        .comp-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .comp-bar {
+            background: #1f2a3e;
+            border-radius: 20px;
+            height: 6px;
+            overflow: hidden;
+        }
+        .comp-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #3b82f6);
+            border-radius: 20px;
+            transition: width 1s ease-out;
+        }
+
+        /* publication list */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .pub-item {
+            background: rgba(30, 45, 70, 0.5);
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            transition: all 0.2s;
+        }
+        .pub-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .pub-venue {
+            font-size: 0.8rem;
+            color: #94a3d8;
+        }
+
+        /* timeline flex */
+        .edu-work {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .timeline-card {
+            background: rgba(18, 28, 45, 0.6);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+        }
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(100,140,200,0.2);
+        }
+
+        @media (max-width: 750px) {
+            .hero-name { font-size: 2.5rem; }
+            .edu-work { grid-template-columns: 1fr; }
+            .container { padding: 1.2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a {
+            color: #7aaef0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        i {
+            margin-right: 6px;
+        }
+        .inline-icon {
+            margin-right: 4px;
+        }
+        button, .fake-link {
+            background: none;
+            border: none;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Mahdi Dehghani</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<div class="gradient-bg"></div>
+<div class="container">
+    <!-- Hero section -->
+    <div class="hero glass-card reveal">
+        <div class="hero-name">Mahdi Dehghani</div>
+        <div class="hero-tagline">
+            <i class="fas fa-brain"></i> AI Researcher | Deep Learning & NLP · Multimodal Generative AI · Probabilistic Modeling
         </div>
-    </nav>
+        <div class="hero-badge">
+            <span class="badge"><i class="fas fa-language"></i> English (Fluent)</span>
+            <span class="badge lang-badge"><i class="fas fa-language"></i> Persian (Native)</span>
+            <span class="badge lang-badge"><i class="fas fa-language"></i> German (Beginner)</span>
+            <span class="badge"><i class="fas fa-graduation-cap"></i> M.Sc. Software Engineering</span>
+            <span class="badge"><i class="fas fa-microchip"></i> ACL 2025 Findings</span>
+        </div>
+        <div style="margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <span><i class="fab fa-github"></i> github.com/MahdiOnGit</span>
+            <span><i class="fas fa-map-marker-alt"></i> Tehran, Iran</span>
+        </div>
+    </div>
 
-    <!-- Hero Header -->
-    <header>
-        <div class="container">
-            
-            <h1>AI Researcher | PhD Candidate | Deep Learning Specialist</h1>
-            <div style="margin-top: 20px;">
-                <a href="#contact" class="btn">Get in Touch</a>
-                <a href="#resume" class="btn btn-outline">View Resume</a>
+    <!-- STATS (completing counters) -->
+    <div class="stats-grid reveal" id="statsSection">
+        <div class="stat-item"><div class="stat-number" data-count="2">0</div><div class="stat-label">Peer-Reviewed Papers</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="4">0</div><div class="stat-label">Major AI Projects</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="3">0</div><div class="stat-label">Certifications</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="8">0</div><div class="stat-label">+ Years Code Experience</div></div>
+    </div>
+
+    <!-- Research Interests -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-microscope"></i> Research Frontiers</h2>
+        <div class="hero-badge" style="gap: 1rem;">
+            <span class="badge" style="background:#1e2a47;">Natural Language Processing</span>
+            <span class="badge" style="background:#1e2a47;">Multimodal Grounding</span>
+            <span class="badge" style="background:#1e2a47;">Agentic AI</span>
+            <span class="badge" style="background:#1e2a47;">Medical Image Analysis</span>
+            <span class="badge" style="background:#1e2a47;">Probabilistic Generative Models</span>
+        </div>
+    </section>
+
+    <!-- Technical Skills with animated bars (completion on scroll) -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-code"></i> Technical Arsenal</h2>
+        <div class="skills-wrapper" id="skillsContainer">
+            <!-- skills injected via JS for cleaner maintainability but we can inline static with dynamic bar fill -->
+        </div>
+    </section>
+
+    <!-- Projects with Completion bars (each completes 100% on scroll) -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-rocket"></i> Featured Projects · Completion Unlocked</h2>
+        <div class="projects-grid" id="projectsGrid">
+            <!-- projects will be rendered via JS or static but included with comp-fill -->
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-file-alt"></i> Publications & Findings</h2>
+        <div class="pub-list">
+            <div class="pub-item">
+                <div class="pub-title">✨ Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation</div>
+                <div class="pub-venue"><a href="https://aclanthology.org/2025.findings-acl.861/">ACL Findings 2025 (Main Conference)</a> | <i class="fab fa-github"></i> <a href="https://github.com/llm-lab-org/Multimodal-RAG-Survey">Project Page</a></div>
+                <div style="font-size:0.8rem; margin-top:4px;">First comprehensive survey on MM-RAG, accepted at ACL 2025 Findings.</div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-title">📄 DIPT: Diversified Personalized Transformer for Query Auto-Completion Systems</div>
+                <div class="pub-venue">IEEE (Journal/Conference) | Diversified personalized ranking transformer</div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="container">
-        <h2><i class="fas fa-user-circle" style="margin-right: 10px;"></i>About Me</h2>
-        <p>
-            I am an <strong>AI researcher</strong> with strong expertise in <strong>Deep Learning, Natural Language Processing (NLP), and Machine Learning</strong>. 
-            My work is currently focused on <strong>probabilistic modeling and Generative AI</strong>, driven by a passion for developing data-efficient learning systems for scientific applications.
-        </p>
-        <p>
-            With strong programming skills and mathematical maturity, I have built a proven track record of impactful research, including an accepted paper at <strong>ACL 2025 Findings</strong>. 
-            I am currently a PhD Candidate looking to contribute to cutting-edge research.
-        </p>
-        
-        <div style="margin-top: 30px;">
-            <h3>Research Interests</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                <span class="skill-tag">Natural Language Processing</span>
-                <span class="skill-tag">Computer Vision</span>
-                <span class="skill-tag">Machine Learning & Deep Learning</span>
-                <span class="skill-tag">Interdisciplinary AI Research</span>
-                <span class="skill-tag">Generative AI</span>
+    <!-- Education & Experience -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-user-graduate"></i> Academic & Professional Path</h2>
+        <div class="edu-work">
+            <div class="timeline-card">
+                <h3><i class="fas fa-university"></i> Education</h3>
+                <div class="timeline-item">
+                    <strong>🎓 M.Sc. Software Engineering</strong><br>Khaje Nasiroddine Toosi University (Tehran) · Sep 2019 – Sep 2022<br>
+                    <em>Thesis:</em> Diversifying Personalized Query Auto-Completion using Query Topics<br>
+                    <span class="badge" style="margin-top:6px;">2nd ranked student</span> · Teaching Assistant: Advanced Data Mining
+                </div>
+                <div class="timeline-item">
+                    <strong>🎓 B.Sc. Computer Engineering</strong><br>Bu-Ali Sina University (Hamedan) · Sep 2014 – Sep 2018<br>
+                    <em>Thesis:</em> Android Face Recognition using Biometric Features (OpenCV/LBPH)<br>
+                    Top performer in core mathematics.
+                </div>
+            </div>
+            <div class="timeline-card">
+                <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                <div class="timeline-item"><strong>IT Support & Systems Analyst</strong> – Management and Planning Organization</div>
+                <div class="timeline-item"><strong>Private Python & ML Tutor</strong> – Data structures, ML algorithms, real-world programming</div>
+                <div class="timeline-item"><strong>Teaching Assistant</strong> – Advanced Data Mining (M.Sc. level), KNTU</div>
+                <div class="timeline-item"><strong>Independent Research</strong> – Knowledge Graph-Enhanced RAG, Multimodal AI systems</div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container">
-        <h2><i class="fas fa-code-branch" style="margin-right: 10px;"></i>Selected Projects</h2>
-        
-        <div class="resume-item">
-            <h3>Diversifying Personalized Query Auto-Completion System</h3>
-            <span class="date">Transformer-based Model | PyTorch</span>
-            <p><strong>Goal:</strong> Enhance search efficiency and user experience by generating personalized and diverse query suggestions.</p>
-            <ul class="custom-list">
-                <li>Designed a transformer-based model using PyTorch and attention mechanisms.</li>
-                <li>Tailored suggestions to users by integrating user-specific embeddings.</li>
-                <li>Implemented sampling-based generation for diverse and meaningful suggestions.</li>
-                <li>Achieved measurable improvements in BLEU and ROUGE metrics over baselines.</li>
-            </ul>
-        </div>
-
-        <div class="resume-item">
-            <h3>Android-based Face Recognition App</h3>
-            <span class="date">Java, OpenCV, SQLite</span>
-            <p><strong>Goal:</strong> Develop a secure and efficient face recognition system for mobile.</p>
-            <ul class="custom-list">
-                <li>Achieved over 90% authentication accuracy using OpenCV's LBPH algorithm.</li>
-                <li>Leveraged real-time face detection with CameraX.</li>
-                <li>Ensured data privacy by securely storing user metadata locally in SQLite.</li>
-            </ul>
-        </div>
-
-        <div class="resume-item">
-            <h3>NLP-based Disease Detection (ClinicalBERT)</h3>
-            <span class="date">Clinical Notes Analysis | MIMIC-III Dataset</span>
-            <p><strong>Goal:</strong> Predict ICD-9 codes from clinical notes to streamline medical coding.</p>
-            <ul class="custom-list">
-                <li>Fine-tuned ClinicalBERT on 40,000+ patient records for multi-label classification.</li>
-                <li>Attained an F1-score of 0.65, outperforming traditional methods by 20-30%.</li>
-            </ul>
+    <!-- Certificates + extra -->
+    <section class="reveal">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certificates & Honors</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <span class="badge"><i class="fab fa-coursera"></i> <a href="https://coursera.org/share/2c108990d5977b9d8c880b6065135538"> NLP in TensorFlow (Coursera) </a></span>
+            <span class="badge"><i class="fab fa-coursera"></i> <a href="https://coursera.org/share/a4c3ebe26bc4f9a97e27aaf7af317e64"> CNN in TensorFlow (Coursera) </a></span>
+            <span class="badge"><i class="fas fa-chalkboard"></i> <a href="https://www.udemy.com/certificate/UC-a280ba57-673f-4b87-9d80-f1de8851184c/"> Python Data Science A-Z (Udemy) </a></span>
+            <span class="badge"><i class="fas fa-trophy"></i> Second-Ranked Master Student</span>
         </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="container">
-        <h2><i class="fas fa-book" style="margin-right: 10px;"></i>Publications</h2>
-        <ul class="custom-list">
-            <li>
-                <strong>Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation</strong><br>
-                <em>ACL Findings 2025</em> | <a href="#" style="color:var(--accent-color);">arXiv</a> | <a href="#" style="color:var(--accent-color);">GitHub</a>
-            </li>
-            <li>
-                <strong>DIPT: Diversified Personalized Transformer for QAC systems</strong><br>
-                <em>IEEE</em>
-            </li>
-        </ul>
-    </section>
+    <div class="footer">
+        <i class="fab fa-github"></i> github.com/MahdiOnGit
+    </div>
+</div>
 
-    <!-- Resume Section -->
-    <section id="resume" class="container">
-        <h2><i class="fas fa-graduation-cap" style="margin-right: 10px;"></i>Resume</h2>
-        
-        <h3>Education</h3>
-        <div class="resume-item">
-            <h4>Master of Software Engineering</h4>
-            <span class="date">Khaje Nasiroddine Toosi University, Tehran | Sep 2019 - Sep 2022</span>
-            <p><strong>Thesis:</strong> Diversifying Personalized Query Auto Completion system using Query Topics</p>
-            <p>Graduated as the 2nd ranked student in the program.</p>
-        </div>
+<script>
+    // ---------- SKILLS DATA (percentage completion for each skill) ----------
+    const skillsData = [
+        { name: "Python (Expert)", percent: 95 },
+        { name: "PyTorch / TensorFlow / Keras", percent: 92 },
+        { name: "Hugging Face Transformers", percent: 90 },
+        { name: "RAG / LangChain / LLM Orchestration", percent: 88 },
+        { name: "Neo4j / Graph RAG", percent: 82 },
+        { name: "Computer Vision (OpenCV)", percent: 85 },
+        { name: "Java / Android (LBPH)", percent: 78 },
+        { name: "Pandas / NumPy / Data Science", percent: 88 },
+        { name: "SQL, SQLite, NetworkX", percent: 80 }
+    ];
 
-        <div class="resume-item">
-            <h4>Bachelor of Computer Engineering</h4>
-            <span class="date">Bu-Ali Sina University, Hamedan | Sep 2014 - Sep 2018</span>
-            <p><strong>Thesis:</strong> Face Recognition Android application using biometric features</p>
-            <p>Top performer in core mathematics courses.</p>
-        </div>
+    // Projects data with completion (each gets a bar that goes to 100% on scroll)
+    const projectsData = [
+        {
+            title: "Knowledge Graph-Enhanced RAG Assistant",
+            tech: "LangChain · Neo4j · LLM · Hybrid Retrieval",
+            desc: "Built KG-augmented RAG prototype combining vector search with graph traversal for multi-hop reasoning, reducing hallucination over technical docs. Evaluated against vanilla RAG.",
+            completionTarget: 100
+        },
+        {
+            title: "Diversifying Personalized Query Auto-Completion",
+            tech: "PyTorch · Transformers · Personalized Embeddings · BLEU/ROUGE",
+            desc: "Transformer-based model generating diverse & personalized suggestions; used topic conditioning & sampling strategies to improve user engagement. Achieved state-of-art diversity metrics.",
+            completionTarget: 100
+        },
+        {
+            title: "Android Face Recognition (Biometric Auth)",
+            tech: "Java, OpenCV, LBPH, SQLite, CameraX",
+            desc: "Developed secure real-time face auth >90% accuracy. Optimized preprocessing, stored biometric templates securely, used LBPH for fast mobile inference.",
+            completionTarget: 100
+        }
+    ];
 
-        <h3>Experience</h3>
-        <div class="resume-item">
-            <h4>Teaching Assistant - Advanced Data Mining</h4>
-            <span class="date">KNTU | Graduate Level</span>
-            <p>Assisted graduate students with projects and theory.</p>
-        </div>
+    // Render skills with progress bars
+    const skillsContainer = document.getElementById('skillsContainer');
+    function buildSkills() {
+        skillsContainer.innerHTML = '';
+        skillsData.forEach(skill => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'skill-card';
+            skillDiv.innerHTML = `
+                <div class="skill-name">
+                    <span>${skill.name}</span>
+                    <span class="skill-percent-text" id="p-${skill.name.replace(/\s/g, '')}">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" data-skill-percent="${skill.percent}" style="width: 0%;"></div>
+                </div>
+            `;
+            skillsContainer.appendChild(skillDiv);
+        });
+    }
 
-        <div class="resume-item">
-            <h4>Private Python & ML Tutor</h4>
-            <span class="date">Jan 2022 - Present</span>
-            <p>Taught data structures, ML, algorithms, and real-world programming.</p>
-        </div>
+    // Render projects with completion bar (fill to 100% when observed)
+    const projectsGrid = document.getElementById('projectsGrid');
+    function buildProjects() {
+        projectsGrid.innerHTML = '';
+        projectsData.forEach((proj, idx) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('data-project-idx', idx);
+            card.innerHTML = `
+                <div class="project-title">${proj.title}</div>
+                <div class="project-tech"><i class="fas fa-code"></i> ${proj.tech}</div>
+                <div class="project-desc">${proj.desc}</div>
+                <div class="completion-track">
+                    <div class="comp-label"><span><i class="fas fa-check-circle"></i> Implementation Status</span><span id="compLabel-${idx}">0%</span></div>
+                    <div class="comp-bar">
+                        <div class="comp-fill" data-project-complete="${idx}" style="width: 0%;"></div>
+                    </div>
+                </div>
+            `;
+            projectsGrid.appendChild(card);
+        });
+    }
 
-        <div class="resume-item">
-            <h4>IT Specialist</h4>
-            <span class="date">Management and Planning Organization</span>
-            <p>Maintained ISMS and SOC operations. Demonstrated technical reliability in a professional setting.</p>
-        </div>
+    // For Stat Counters (number increment)
+    function animateStats() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'), 10);
+            if (isNaN(target)) return;
+            let current = 0;
+            const increment = target / 45;
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    stat.innerText = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.innerText = target;
+                }
+            };
+            updateCounter();
+        });
+    }
 
-        <h3>Technical Skills</h3>
-        <div style="margin-bottom: 30px;">
-            <p><strong>Languages:</strong> <span class="skill-tag">Python</span> <span class="skill-tag">Java</span> <span class="skill-tag">C++</span> <span class="skill-tag">JavaScript</span></p>
-            <p><strong>ML/DL:</strong> <span class="skill-tag">TensorFlow</span> <span class="skill-tag">PyTorch</span> <span class="skill-tag">Keras</span> <span class="skill-tag">Hugging Face</span> <span class="skill-tag">Scikit-learn</span></p>
-            <p><strong>NLP:</strong> <span class="skill-tag">Transformers</span> <span class="skill-tag">RAG</span> <span class="skill-tag">NLTK</span> <span class="skill-tag">SpaCy</span></p>
-            <p><strong>Tools:</strong> <span class="skill-tag">Git</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Docker</span> <span class="skill-tag">SQL</span></p>
-        </div>
-        
-        <h3>Certificates</h3>
-        <ul class="custom-list">
-            <li>Coursera: Natural Language Processing in TensorFlow</li>
-            <li>Coursera: Convolutional Neural Networks in TensorFlow</li>
-            <li>Udemy: Python for Data Science & Machine Learning from A-Z</li>
-        </ul>
-    </section>
+    // Intersection Observer for:
+    // 1. Skill progress fill based on data-skill-percent
+    // 2. Project completion fill (set width to 100%)
+    // 3. General reveal animation + stats once (prevent multiple)
+    let statsAnimated = false;
+    let skillsObserved = false; // To prevent multiple fills, but each fill only once
+    let projectsCompletionObserved = false;
 
-    <!-- Contact Section -->
-    <section id="contact" class="container">
-        <h2><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact Me</h2>
-        <div style="text-align: center;">
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">I am always open to discussing research opportunities and collaborations.</p>
-            
-            <a href="mailto:mail.MahdiDehghani@gmail.com" class="btn" style="margin: 10px;"><i class="fas fa-envelope"></i> Email Me</a>
-            
-            <div class="social-links" style="margin-top: 40px;">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            
-            <p style="margin-top: 20px; color: #777;">
-                <strong>Email:</strong> mail.MahdiDehghani@gmail.com<br>
-                <strong>Phone:</strong> (+98) 936 143 3121
-            </p>
-        </div>
-    </section>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // For Skill cards: fill progress-fill bars to given percentage
+                if (entry.target.classList && entry.target.classList.contains('skill-card')) {
+                    const fillDiv = entry.target.querySelector('.progress-fill');
+                    if (fillDiv && fillDiv.style.width === '0%' && fillDiv.getAttribute('data-skill-percent')) {
+                        const percent = parseInt(fillDiv.getAttribute('data-skill-percent'), 10);
+                        fillDiv.style.width = percent + '%';
+                        const percentSpan = entry.target.querySelector('.skill-percent-text');
+                        if (percentSpan) {
+                            let pCurrent = 0;
+                            const step = percent / 30;
+                            const interval = setInterval(() => {
+                                pCurrent += step;
+                                if (pCurrent >= percent) {
+                                    percentSpan.innerText = percent + '%';
+                                    clearInterval(interval);
+                                } else {
+                                    percentSpan.innerText = Math.floor(pCurrent) + '%';
+                                }
+                            }, 20);
+                        }
+                    }
+                }
+                // For project completion fills (fill to 100%)
+                if (entry.target.classList && entry.target.classList.contains('project-card')) {
+                    const compFill = entry.target.querySelector('.comp-fill');
+                    const labelSpan = entry.target.querySelector('[id^="compLabel-"]');
+                    if (compFill && compFill.style.width === '0%') {
+                        compFill.style.width = '100%';
+                        if (labelSpan) {
+                            let val = 0;
+                            const intervalComp = setInterval(() => {
+                                val += 3;
+                                if (val >= 100) {
+                                    labelSpan.innerText = '100% ✓';
+                                    clearInterval(intervalComp);
+                                } else {
+                                    labelSpan.innerText = val + '%';
+                                }
+                            }, 20);
+                        } else {
+                            // fallback
+                        }
+                    }
+                }
+                // reveal class handling
+                if (entry.target.classList.contains('reveal')) {
+                    entry.target.classList.add('visible');
+                }
+                // if stats section becomes visible and not animated yet
+                if (entry.target.id === 'statsSection' && !statsAnimated) {
+                    statsAnimated = true;
+                    animateStats();
+                }
+            }
+        });
+    }, { threshold: 0.25, rootMargin: "0px 0px -30px 0px" });
 
-    <footer>
-        <p>&copy; 2025 Mahdi Dehghani. All rights reserved.</p>
-    </footer>
+    // Build DOM elements first
+    buildSkills();
+    buildProjects();
 
+    // Attach observers for all skill cards, project cards, sections with reveal, and stats section
+    document.querySelectorAll('.skill-card').forEach(card => observer.observe(card));
+    document.querySelectorAll('.project-card').forEach(card => observer.observe(card));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const statsEl = document.getElementById('statsSection');
+    if(statsEl) observer.observe(statsEl);
+
+    // For pre-existing stats numbers, ensure they don't increment more than once, but intersection triggers animateStats.
+    // Also pre-trigger for skills that are already visible on load manually (just in case)
+    window.addEventListener('load', () => {
+        // manually trigger to check visible items
+        const visibleSkillCards = document.querySelectorAll('.skill-card');
+        visibleSkillCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                const fillDiv = card.querySelector('.progress-fill');
+                if (fillDiv && fillDiv.style.width === '0%' && fillDiv.getAttribute('data-skill-percent')) {
+                    const percent = parseInt(fillDiv.getAttribute('data-skill-percent'), 10);
+                    fillDiv.style.width = percent + '%';
+                    const pSpan = card.querySelector('.skill-percent-text');
+                    if(pSpan){
+                        let pCurr = 0;
+                        const step = percent/30;
+                        const interval = setInterval(()=>{
+                            pCurr+=step;
+                            if(pCurr>=percent){
+                                pSpan.innerText=percent+'%';
+                                clearInterval(interval);
+                            } else pSpan.innerText=Math.floor(pCurr)+'%';
+                        },20);
+                    }
+                }
+            }
+        });
+        // also for project completions visible on load
+        const visibleProj = document.querySelectorAll('.project-card');
+        visibleProj.forEach(proj => {
+            const rect = proj.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 80){
+                const fillComp = proj.querySelector('.comp-fill');
+                const labelSpan = proj.querySelector('[id^="compLabel-"]');
+                if(fillComp && fillComp.style.width === '0%'){
+                    fillComp.style.width = '100%';
+                    if(labelSpan){
+                        let v=0;
+                        const intervalC = setInterval(()=>{ v+=3; if(v>=100){ labelSpan.innerText='100% ✓'; clearInterval(intervalC);} else labelSpan.innerText=v+'%'; },20);
+                    }
+                }
+            }
+        });
+        if(!statsAnimated){
+            const statsRect = statsEl?.getBoundingClientRect();
+            if(statsRect && statsRect.top < window.innerHeight - 80) {
+                statsAnimated = true;
+                animateStats();
+            }
+        }
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+        });
+    });
+</script>
 </body>
 </html>
